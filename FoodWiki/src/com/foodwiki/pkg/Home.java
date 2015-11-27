@@ -29,8 +29,10 @@ public class Home extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PrintWriter out = response.getWriter().append("Served at: ").append(request.getContextPath());
-		out.print("Hell unleasehed...");
+		//PrintWriter out = response.getWriter().append("Served at: ").append(request.getContextPath());
+		String element_1_value = request.getParameter("search") ;
+		PrintWriter out = response.getWriter();
+		out.print(element_1_value);
 	}
 
 	/**
@@ -39,6 +41,7 @@ public class Home extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
 	}
 
 }

@@ -7,10 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Welcome to FoodWiki</h1>
-<hr>
-<form action="Home">
-	<input type="submit" value="Send"/>
-</form>
+<div id="foodWikiBody">	
+	<h1>Welcome to FoodWiki</h1>
+	<form action="Home" method="post">
+		<input type="text" id="search"  name="search">
+		<input type="submit" value="Submit"/>
+	</form>
+</div>
 </body>
 </html>
