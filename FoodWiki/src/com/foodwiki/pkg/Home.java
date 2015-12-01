@@ -32,7 +32,9 @@ public class Home extends HttpServlet {
 		//PrintWriter out = response.getWriter().append("Served at: ").append(request.getContextPath());
 		String element_1_value = request.getParameter("search") ;
 		PrintWriter out = response.getWriter();
-		out.print(element_1_value);
+		String output = element_1_value;
+		out.print(output);
+		
 	}
 
 	/**
