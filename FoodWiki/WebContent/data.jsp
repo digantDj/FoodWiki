@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title><%ServletContext context = request.getSession().getServletContext();%><%=context.getAttribute("search")%></title>
+<title>FoodWiki</title>
 </head>
 <body>
-
+Hello<%out.println(request.getAttribute("result"));%>
 </body>
 </html>
