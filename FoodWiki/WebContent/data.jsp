@@ -10,7 +10,7 @@
 </head>
 <body>
 			 <div id="logo" align="center"><a href="http://localhost:8080/FoodWiki/"><img border="0" src="images/logo.png"></a></div>
-			 <div id="aboutFood"><img id="foodbag" src="images/foodbag.png" align="left"><span id="foodName">Product Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; Spinach</span></br>
+			 <div id="aboutFood"><a href="http://localhost:8080/FoodWiki/"><img id="back" src="images/back.png" title="Search another product"/></a><img id="foodbag" src="images/foodbag.png" align="left"><span id="foodName">Product Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; Spinach</span></br>
 			 <span id="ingredientsList">Contains Ingredients &nbsp;&nbsp;:&nbsp;&nbsp; Sugar,Salt.</span>
 			 </div>
 			 <div id="userSection">

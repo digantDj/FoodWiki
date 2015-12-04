@@ -199,4 +199,12 @@
 		font-size: 17px;
     	line-height: 30px;
 	}
+	#back{
+	    width: 50px;
+    	position: relative;
+    	left: -400px;
+    }
+	span#foodName{
+	    right: 49px;
+	}
 		
