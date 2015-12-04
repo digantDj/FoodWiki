@@ -174,30 +174,36 @@
 	span#foodName , span#ingredientsList {
 	    font-family: "Roboto", sans-serif;
 	    font-size: x-large;
-	    top: 100px !important;
+	    top: 22px !important;
 	    position: relative;
+	    width: 50% !important;
+    	display: inline-block;
+    	line-height: 23px;
 	}
 	div#userSection{
-		text-align:center;
+		text-align: left;
 		font-family: "Roboto", sans-serif;
 		font-size: x-large;
-		width: 80%;
-		margin-left:10%;
+		width: 75%;
+		margin-left: 13%;
+    	margin-top: 50px;
 	}
 	div#rightSection {
     	display: inline !important;
+    	float: right;
 	}
 	div#leftSection {
     	display: inline !important;
     	float: left;
-    	margin-left: 150px;	
+    	width: 68%;	
 	}
 	div#logo {
-    	margin-top: -40px;
+    	margin-left: 107px;
+    	margin-top: 40px;
 	}
 	span#leftSectionBody, span#rightSectionBody{
-		font-size: 17px;
-    	line-height: 30px;
+		font-size: 13px;
+    	line-height: 21px;
 	}
 	#back{
 	    width: 50px;
@@ -205,6 +211,16 @@
     	left: -400px;
     }
 	span#foodName{
-	    right: 49px;
+	    right: 53px;
+	}
+	span#ingredientContents {
+    	font-size: medium;
+	}
+	span#extra {
+    	position: relative;
+    	top: 26px;
+	}
+	#leftSectionBody b, #rightSectionBody b{
+    	font-weight: bold;
 	}
 		

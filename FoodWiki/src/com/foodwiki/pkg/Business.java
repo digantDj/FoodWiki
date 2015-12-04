@@ -29,6 +29,7 @@ public class Business {
 	Map result = new HashMap();
 	
 	public Map getResult(String search) throws Exception{
+		result.clear();
 		populateFood();
 		populateTwitter();
 		populateYelp();
@@ -58,25 +59,6 @@ public class Business {
 
 	public void formFoodQuery(Model model, String search)
 	{
-		/*String query = "select ?IngredientListAsText ?carbohydratesPer100g ?vitaminCPer100g ?nutritionScoreUkPer100g ?transFatPer100g ?calciumPer100g ?vitaminAPer100g "
-				+ "?saltPer100g ?ironPer100g ?sugarsPer100g ?saturatedFatPer100g ?fiberPer100g ?energyPer100g ?nutritionScoreFrPer100g ?proteinsPer100g ?fatPer100g ?sodiumPer100g ?cholesterolPer100g where {?about a ?type . ?about food:IngredientListAsText ?IngredientListAsText. ?about food:cholesterolPer100g ?cholesterolPer100g.  ?about food:sodiumPer100g ?sodiumPer100g. ?about food:fatPer100g ?fatPer100g. ?about food:proteinsPer100g ?proteinsPer100g. "
-				+ "?about food:nutritionScoreFrPer100g ?nutritionScoreFrPer100g. ?about food:energyPer100g ?energyPer100g. ?about food:fiberPer100g ?fiberPer100g. ?about food:saturatedFatPer100g ?saturatedFatPer100g. "
-				+ "?about food:saturatedFatPer100g ?saturatedFatPer100g. ?about food:energyFromFatPer100g ?energyFromFatPer100g. ?about food:sugarsPer100g ?sugarsPer100g. ?about food:vitaminAPer100g ?vitaminAPer100g.  ?about food:saltPer100g ?saltPer100g. "
-				+ "?about food:ironPer100g ?ironPer100g. ?about food:nutritionScoreUkPer100g ?nutritionScoreUkPer100g.  ?about food:transFatPer100g ?transFatPer100g.  ?about food:calciumPer100g ?calciumPer100g. ?about food:vitaminCPer100g ?vitaminCPer100g. ?about food:carbohydratesPer100g ?carbohydratesPer100g. "+ "	FILTER(str(?about) =" + search +")}";
-		*/
-	/*	String carbohydrate = "ASK {?about a ?type. ?about food:carbohydratesPer100g ?carbohydratesPer100g. FILTER(str(?about) =" + search + ")}";
-		StringBuffer queryStr = new StringBuffer();
-		// Establish Prefixes
-		queryStr.append("PREFIX food" + ": <" + nameSpace + "> ");
-		queryStr.append("PREFIX rdfs" + ": <" + "http://www.w3.org/2000/01/rdf-schema#" + "> ");
-		queryStr.append("PREFIX rdf" + ": <" + "http://www.w3.org/1999/02/22-rdf-syntax-ns#" + "> ");
-		// Now add query
-		queryStr.append(carbohydrate);
-		Query query = QueryFactory.create(queryStr.toString());
-		QueryExecution qexec = QueryExecutionFactory.create(query, model);
-		Boolean response = qexec.execAsk();
-		System.out.println(response);
-		*/
 		String query = "select ?IngredientListAsText ?carbohydratesPer100g"
 				+ " where {?about a ?type."
 				+ "OPTIONAL {?about food:IngredientListAsText ?IngredientListAsText}"
@@ -103,12 +85,12 @@ public class Business {
 	
 	public void formTwittQuery(Model model, String search)
 	{
-		String query = "select ?about ?status ?userName ?screenname ?userlocation where {?about a ?type. ?about twitter:mentionedIn ?tweet. ?tweet twitter:status ?status. ?tweet twitter:hasUser ?user. ?user twitter:name ?userName. ?user twitter:screenname ?screenname. ?user twitter:location ?location. " + "	FILTER(str(?about) =" + search + ")}";
+		String query = "select DISTINCT ?about ?status ?userName ?screenname ?userlocation where {?about a ?type. ?about twitter:mentionedIn ?tweet. ?tweet twitter:status ?status. ?tweet twitter:hasUser ?user. ?user twitter:name ?userName. ?user twitter:screenname ?screenname. ?user twitter:location ?location. " + "	FILTER(str(?about) =" + search + ")} LIMIT 5";
 		runTwittQuer(query, model); 							
 	}
 	public void formYelpQuery(Model model, String search)
 	{
-		String query = "select ?about ?businessname ?rating ?location where {?about a ?type. ?about yelp:mentionedIn ?business. ?business yelp:name ?businessname. ?business yelp:rating ?rating. ?business yelp:location ?location. " + "	FILTER(str(?about) =" + search + ")}";
+		String query = "select DISTINCT ?about ?businessname ?rating ?location where {?about a ?type. ?about yelp:mentionedIn ?business. ?business yelp:name ?businessname. ?business yelp:rating ?rating. ?business yelp:location ?location. " + "	FILTER(str(?about) =" + search + ")} LIMIT 5";
 		runYelpQuer(query, model); 															
 	}
 
@@ -129,7 +111,9 @@ public class Business {
 			while (response.hasNext())
 			{
 				QuerySolution soln = response.nextSolution();
-				result.put("ing", soln.get("?IngredientListAsText").toString());
+				if(null != soln.get("?IngredientListAsText") && !"".equals(soln.get("?IngredientListAsText"))){
+					result.put("ing", soln.get("?IngredientListAsText").toString());
+				}
 				if(null != soln.get("?carbohydratesPer100g")){
 					result.put("carbohydratesPer100g", soln.get("?carbohydratesPer100g").toString());
 				}
@@ -187,7 +171,6 @@ public class Business {
 		finally {
 			qexec.close();
 		}
-		System.out.println("Finished Ingredients");
 	}
 	
 	public void runTwittQuer(String queryRequest, Model model)
@@ -221,7 +204,6 @@ public class Business {
 					if(null != userLocation){
 						userLocationList.add(userLocation.toString());
 					}
-					//System.out.println(userName.toString()+"--"+status.toString());
 				}
 				result.put("status", statusList);
 				result.put("screenNames", screenNameList);
@@ -231,7 +213,6 @@ public class Business {
 			finally {
 				qexec.close();
 			}
-			System.out.println("Finished Twitter");
 		}
 
 		public void runYelpQuer(String queryRequest, Model model)
@@ -269,7 +250,6 @@ public class Business {
 			finally {
 				qexec.close();
 			}
-			System.out.println("Finished Yelp");
 		}
 
 }
