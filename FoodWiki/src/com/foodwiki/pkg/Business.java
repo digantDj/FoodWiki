@@ -35,7 +35,6 @@ public class Business {
 		formFoodQuery(_food, search);
 		formTwittQuery(_twitter, search);
 		formYelpQuery(_yelp, search);
-		System.out.println("----"+result);
 		return result;
 	}
 

@@ -14,6 +14,14 @@
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
   		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   		<script>
+  		$( document ).ready(function() {
+  		    console.log( "ready!" );
+  		  	$("#loader").hide();
+  		  	$("#submit").click(function(){
+  		    		$("#loader").show();
+  				});
+  		});;
+  		
   $(function() {
 	  var foodNamesString;
 	  $.ajax({
@@ -31,6 +39,7 @@
       source: availableTags
     });
   });
+  
   </script>
   
 </head>
@@ -45,9 +54,12 @@
 	<div class="ui-widget">
 	<form id="foodwiki-form" action="Home" method="post">
 		<input type="text" id="search"  name="search" placeholder="Search for a food product or dish">
-		<input type="submit" value="SEARCH"/>
+		<input type="submit" id="submit" value="SEARCH"/>
 	</form>
 	</div>
+	<!-- Loader -->
+	<img id="loader" src="images/loading.gif" style="position:absolute;left:0;top:0;width:100%;height: 100%;z-index: 1000;"/>
+	
 	<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
@@ -60,6 +72,7 @@
 					<li>&copy; FoodWiki.</li><li>Web Semantics Project 2015 - SER 594 ( Team 14 )</li>
 				</ul>
 			</footer>
+	
 
 	<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
