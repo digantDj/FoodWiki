@@ -19,25 +19,25 @@
 					List<String> ratings = (List)result.get("ratings"); 
 					List<String> location = (List)result.get("locations");%><br/>
 			 <div id="logo" align="center"><a href="http://localhost:8080/FoodWiki/"><img border="0" src="images/logo.png"></a></div>
-			 <div id="aboutFood"><img id="foodbag" src="images/foodbag.png" align="left"><span id="foodName">Product Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; <%=request.getParameter("search")%></span></br>
-			 <%if(result.containsKey("ing"))%><span id="ingredientsList">Contains Ingredients &nbsp;&nbsp;:&nbsp;&nbsp; <%{out.println(result.get("ing"));%></span><%} %>
-			<%if(result.containsKey("carbohydratesPer100g")){%><span id="ingredientsList"><br/>Carbohydrates Per 100g<%{out.println(result.get("carbohydratesPer100g"));%></span><%}}%>
-			<%if(result.containsKey("vitaminCPer100g")){%><span id="ingredientsList"><br/>Vitamin C Per 100g<%{out.println(result.get("vitaminCPer100g"));%></span><%}}%>
-			<%if(result.containsKey("nutritionScoreUkPer100g")){%><span id="ingredientsList"><br/>Nutrition Score Uk Per 100g<%{out.println(result.get("nutritionScoreUkPer100g"));%></span><%}}%>
-			<%if(result.containsKey("transFatPer100g")){%><span id="ingredientsList"><br/>Trans Fat Per 100g<%{out.println(result.get("transFatPer100g"));%></span><%}}%>
-			<%if(result.containsKey("calciumPer100g")){%><span id="ingredientsList"><br/>Calcium Per 100g<%{out.println(result.get("calciumPer100g"));%></span><%}}%>
-			<%if(result.containsKey("vitaminAPer100g")){%><span id="ingredientsList"><br/>Vitamin A Per 100g<%{out.println(result.get("vitaminAPer100g"));%></span><%}}%>
-			<%if(result.containsKey("saltPer100g")){%><span id="ingredientsList"><br/>Salt Per 100g<%{out.println(result.get("saltPer100g"));%></span><%}}%>
-			<%if(result.containsKey("ironPer100g")){%><span id="ingredientsList"><br/>Iron Per 100g<%{out.println(result.get("ironPer100g"));%></span><%}}%>
-			<%if(result.containsKey("sugarsPer100g")){%><span id="ingredientsList"><br/>Sugars Per 100g<%{out.println(result.get("sugarsPer100g"));%></span><%}}%>
-			<%if(result.containsKey("saturatedFatPer100g")){%><span id="ingredientsList"><br/>Saturated Fat Per 100g<%{out.println(result.get("saturatedFatPer100g"));%></span><%}}%>
-			<%if(result.containsKey("fiberPer100g")){%><span id="ingredientsList"><br/>Fiber Per 100g<%{out.println(result.get("fiberPer100g"));%></span><%}}%>
-			<%if(result.containsKey("energyPer100g")){%><span id="ingredientsList"><br/>Energy Per 100g<%{out.println(result.get("energyPer100g"));%></span><%}}%>
-			<%if(result.containsKey("nutritionScoreFrPer100g")){%><span id="ingredientsList"><br/>Nutrition Score Fr Per 100g<%{out.println(result.get("nutritionScoreFrPer100g"));%></span><%}}%>
-			<%if(result.containsKey("proteinsPer100g")){%><span id="ingredientsList"><br/>Proteins Per 100g<%{out.println(result.get("proteinsPer100g"));%></span><%}}%>
-			<%if(result.containsKey("fatPer100g")){%><span id="ingredientsList"><br/>Fat Per 100g<%{out.println(result.get("fatPer100g"));%></span><%}}%>
-			<%if(result.containsKey("sodiumPer100g")){%><span id="ingredientsList"><br/>Sodium Per 100g<%{out.println(result.get("sodiumPer100g"));%></span><%}}%>
-			<%if(result.containsKey("cholesterolPer100g")){%><span id="ingredientsList"><br/>Cholesterol Per 100g<%{out.println(result.get("cholesterolPer100g"));%></span><%}}%>
+			 <div id="aboutFood"><img id="foodbag" src="images/foodbag.png" align="left"><span id="foodName">Product Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; <%=request.getParameter("search")%></span></br>
+			 <%if(result.containsKey("ing"))%><span id="ingredientsList">Contains Ingredients &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; <%{out.println(result.get("ing"));%></span><%} %>
+			<%if(result.containsKey("carbohydratesPer100g")){%><span id="ingredientsList"><br/>Carbohydrates Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("carbohydratesPer100g"));%></span><%}}%>
+			<%if(result.containsKey("vitaminCPer100g")){%><span id="ingredientsList"><br/>Vitamin C Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("vitaminCPer100g"));%></span><%}}%>
+			<%if(result.containsKey("nutritionScoreUkPer100g")){%><span id="ingredientsList"><br/>Nutrition Score Uk Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("nutritionScoreUkPer100g"));%></span><%}}%>
+			<%if(result.containsKey("transFatPer100g")){%><span id="ingredientsList"><br/>Trans Fat Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("transFatPer100g"));%></span><%}}%>
+			<%if(result.containsKey("calciumPer100g")){%><span id="ingredientsList"><br/>Calcium Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("calciumPer100g"));%></span><%}}%>
+			<%if(result.containsKey("vitaminAPer100g")){%><span id="ingredientsList"><br/>Vitamin A Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("vitaminAPer100g"));%></span><%}}%>
+			<%if(result.containsKey("saltPer100g")){%><span id="ingredientsList"><br/>Salt Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("saltPer100g"));%></span><%}}%>
+			<%if(result.containsKey("ironPer100g")){%><span id="ingredientsList"><br/>Iron Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("ironPer100g"));%></span><%}}%>
+			<%if(result.containsKey("sugarsPer100g")){%><span id="ingredientsList"><br/>Sugars Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("sugarsPer100g"));%></span><%}}%>
+			<%if(result.containsKey("saturatedFatPer100g")){%><span id="ingredientsList"><br/>Saturated Fat Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("saturatedFatPer100g"));%></span><%}}%>
+			<%if(result.containsKey("fiberPer100g")){%><span id="ingredientsList"><br/>Fiber Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("fiberPer100g"));%></span><%}}%>
+			<%if(result.containsKey("energyPer100g")){%><span id="ingredientsList"><br/>Energy Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("energyPer100g"));%></span><%}}%>
+			<%if(result.containsKey("nutritionScoreFrPer100g")){%><span id="ingredientsList"><br/>Nutrition Score Fr Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("nutritionScoreFrPer100g"));%></span><%}}%>
+			<%if(result.containsKey("proteinsPer100g")){%><span id="ingredientsList"><br/>Proteins Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("proteinsPer100g"));%></span><%}}%>
+			<%if(result.containsKey("fatPer100g")){%><span id="ingredientsList"><br/>Fat Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("fatPer100g"));%></span><%}}%>
+			<%if(result.containsKey("sodiumPer100g")){%><span id="ingredientsList"><br/>Sodium Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("sodiumPer100g"));%></span><%}}%>
+			<%if(result.containsKey("cholesterolPer100g")){%><span id="ingredientsList"><br/>Cholesterol Per 100g&nbsp;&nbsp;:&nbsp;&nbsp;<%{out.println(result.get("cholesterolPer100g"));%></span><%}}%>
 			 </div>
 			 <div id="userSection">
 			 <%if(null != tweets && null != userNames && tweets.size() != 0 && userNames.size() != 0){ %>
